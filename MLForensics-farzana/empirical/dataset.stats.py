@@ -1,5 +1,3 @@
-# edit for gitpush :) ignore or remove later
-
 '''
 Akond Rahman 
 Nov 16, 2020 
