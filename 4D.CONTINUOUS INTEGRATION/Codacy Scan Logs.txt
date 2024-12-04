@@ -1,0 +1,490 @@
+﻿2024-12-03T23:13:10.9076855Z Current runner version: '2.321.0'
+2024-12-03T23:13:10.9101908Z ##[group]Operating System
+2024-12-03T23:13:10.9102832Z Ubuntu
+2024-12-03T23:13:10.9103292Z 22.04.5
+2024-12-03T23:13:10.9104067Z LTS
+2024-12-03T23:13:10.9104683Z ##[endgroup]
+2024-12-03T23:13:10.9105183Z ##[group]Runner Image
+2024-12-03T23:13:10.9105764Z Image: ubuntu-22.04
+2024-12-03T23:13:10.9106363Z Version: 20241124.1.0
+2024-12-03T23:13:10.9107373Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20241124.1/images/ubuntu/Ubuntu2204-Readme.md
+2024-12-03T23:13:10.9108810Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20241124.1
+2024-12-03T23:13:10.9109822Z ##[endgroup]
+2024-12-03T23:13:10.9110350Z ##[group]Runner Image Provisioner
+2024-12-03T23:13:10.9110904Z 2.0.385.1
+2024-12-03T23:13:10.9111472Z ##[endgroup]
+2024-12-03T23:13:10.9112678Z ##[group]GITHUB_TOKEN Permissions
+2024-12-03T23:13:10.9114757Z Actions: read
+2024-12-03T23:13:10.9115772Z Contents: read
+2024-12-03T23:13:10.9116574Z Metadata: read
+2024-12-03T23:13:10.9117163Z SecurityEvents: write
+2024-12-03T23:13:10.9117700Z ##[endgroup]
+2024-12-03T23:13:10.9120876Z Secret source: Actions
+2024-12-03T23:13:10.9121909Z Prepare workflow directory
+2024-12-03T23:13:10.9424436Z Prepare all required actions
+2024-12-03T23:13:10.9460984Z Getting action download info
+2024-12-03T23:13:11.1294610Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2024-12-03T23:13:11.2244839Z Download action repository 'codacy/codacy-analysis-cli-action@d840f886c4bd4edc059706d09c6a1586111c540b' (SHA:d840f886c4bd4edc059706d09c6a1586111c540b)
+2024-12-03T23:13:11.4698812Z Download action repository 'github/codeql-action@v3' (SHA:aa578102511db1f4524ed59b8cc2bae4f6e88195)
+2024-12-03T23:13:16.2213442Z Complete job name: Codacy Security Scan
+2024-12-03T23:13:16.2996691Z ##[group]Run actions/checkout@v4
+2024-12-03T23:13:16.2997468Z with:
+2024-12-03T23:13:16.2997959Z   repository: ohkelci/DKNT-FALL2024-SQA
+2024-12-03T23:13:16.2998538Z   token: ***
+2024-12-03T23:13:16.2998868Z   ssh-strict: true
+2024-12-03T23:13:16.2999350Z   ssh-user: git
+2024-12-03T23:13:16.2999653Z   persist-credentials: true
+2024-12-03T23:13:16.3000001Z   clean: true
+2024-12-03T23:13:16.3000410Z   sparse-checkout-cone-mode: true
+2024-12-03T23:13:16.3000749Z   fetch-depth: 1
+2024-12-03T23:13:16.3001079Z   fetch-tags: false
+2024-12-03T23:13:16.3001464Z   show-progress: true
+2024-12-03T23:13:16.3001751Z   lfs: false
+2024-12-03T23:13:16.3002088Z   submodules: false
+2024-12-03T23:13:16.3002475Z   set-safe-directory: true
+2024-12-03T23:13:16.3003058Z ##[endgroup]
+2024-12-03T23:13:16.5032046Z Syncing repository: ohkelci/DKNT-FALL2024-SQA
+2024-12-03T23:13:16.5034180Z ##[group]Getting Git version info
+2024-12-03T23:13:16.5035542Z Working directory is '/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA'
+2024-12-03T23:13:16.5037191Z [command]/usr/bin/git version
+2024-12-03T23:13:16.5092136Z git version 2.47.0
+2024-12-03T23:13:16.5119559Z ##[endgroup]
+2024-12-03T23:13:16.5134618Z Temporarily overriding HOME='/home/runner/work/_temp/d16f8d21-2a6f-4138-bd65-af3b5b6f7372' before making global git config changes
+2024-12-03T23:13:16.5136230Z Adding repository directory to the temporary git global config as a safe directory
+2024-12-03T23:13:16.5148071Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA
+2024-12-03T23:13:16.5183521Z Deleting the contents of '/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA'
+2024-12-03T23:13:16.5187382Z ##[group]Initializing the repository
+2024-12-03T23:13:16.5191880Z [command]/usr/bin/git init /home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA
+2024-12-03T23:13:16.5265567Z hint: Using 'master' as the name for the initial branch. This default branch name
+2024-12-03T23:13:16.5266802Z hint: is subject to change. To configure the initial branch name to use in all
+2024-12-03T23:13:16.5267522Z hint: of your new repositories, which will suppress this warning, call:
+2024-12-03T23:13:16.5268407Z hint:
+2024-12-03T23:13:16.5268844Z hint: 	git config --global init.defaultBranch <name>
+2024-12-03T23:13:16.5269229Z hint:
+2024-12-03T23:13:16.5269815Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2024-12-03T23:13:16.5270466Z hint: 'development'. The just-created branch can be renamed via this command:
+2024-12-03T23:13:16.5270906Z hint:
+2024-12-03T23:13:16.5271303Z hint: 	git branch -m <name>
+2024-12-03T23:13:16.5273596Z Initialized empty Git repository in /home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/
+2024-12-03T23:13:16.5285882Z [command]/usr/bin/git remote add origin https://github.com/ohkelci/DKNT-FALL2024-SQA
+2024-12-03T23:13:16.5325389Z ##[endgroup]
+2024-12-03T23:13:16.5326715Z ##[group]Disabling automatic garbage collection
+2024-12-03T23:13:16.5327609Z [command]/usr/bin/git config --local gc.auto 0
+2024-12-03T23:13:16.5356374Z ##[endgroup]
+2024-12-03T23:13:16.5357469Z ##[group]Setting up auth
+2024-12-03T23:13:16.5362051Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-12-03T23:13:16.5391960Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-12-03T23:13:16.5694463Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-12-03T23:13:16.5723658Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-12-03T23:13:16.5963542Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2024-12-03T23:13:16.6001400Z ##[endgroup]
+2024-12-03T23:13:16.6002732Z ##[group]Fetching the repository
+2024-12-03T23:13:16.6009374Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +24dfc8d02d6e907391b7996036e35234fcb00a2f:refs/remotes/origin/main
+2024-12-03T23:13:16.7860077Z From https://github.com/ohkelci/DKNT-FALL2024-SQA
+2024-12-03T23:13:16.7861894Z  * [new ref]         24dfc8d02d6e907391b7996036e35234fcb00a2f -> origin/main
+2024-12-03T23:13:16.7896652Z ##[endgroup]
+2024-12-03T23:13:16.7897600Z ##[group]Determining the checkout info
+2024-12-03T23:13:16.7898690Z ##[endgroup]
+2024-12-03T23:13:16.7903863Z [command]/usr/bin/git sparse-checkout disable
+2024-12-03T23:13:16.7947828Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2024-12-03T23:13:16.7976365Z ##[group]Checking out the ref
+2024-12-03T23:13:16.7979760Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2024-12-03T23:13:16.8050937Z Switched to a new branch 'main'
+2024-12-03T23:13:16.8053961Z branch 'main' set up to track 'origin/main'.
+2024-12-03T23:13:16.8059597Z ##[endgroup]
+2024-12-03T23:13:16.8094715Z [command]/usr/bin/git log -1 --format=%H
+2024-12-03T23:13:16.8118021Z 24dfc8d02d6e907391b7996036e35234fcb00a2f
+2024-12-03T23:13:16.8365233Z ##[group]Run codacy/codacy-analysis-cli-action@d840f886c4bd4edc059706d09c6a1586111c540b
+2024-12-03T23:13:16.8365818Z with:
+2024-12-03T23:13:16.8366214Z   verbose: true
+2024-12-03T23:13:16.8366559Z   output: results.sarif
+2024-12-03T23:13:16.8366874Z   format: sarif
+2024-12-03T23:13:16.8367245Z   gh-code-scanning-compat: true
+2024-12-03T23:13:16.8367642Z   max-allowed-issues: 2147483647
+2024-12-03T23:13:16.8367989Z ##[endgroup]
+2024-12-03T23:13:16.8455860Z ##[group]Run echo "CODACY_ANALYSIS_CLI_VERSION=4.0.0" >> $GITHUB_ENV
+2024-12-03T23:13:16.8456536Z [36;1mecho "CODACY_ANALYSIS_CLI_VERSION=4.0.0" >> $GITHUB_ENV[0m
+2024-12-03T23:13:16.8553658Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2024-12-03T23:13:16.8554219Z ##[endgroup]
+2024-12-03T23:13:16.8716485Z ##[group]Run echo "CLI_SCRIPT_PATH=/home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh" >> $GITHUB_ENV
+2024-12-03T23:13:16.8719119Z [36;1mecho "CLI_SCRIPT_PATH=/home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh" >> $GITHUB_ENV[0m
+2024-12-03T23:13:16.8779927Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2024-12-03T23:13:16.8780439Z env:
+2024-12-03T23:13:16.8780801Z   CODACY_ANALYSIS_CLI_VERSION: 4.0.0
+2024-12-03T23:13:16.8781253Z ##[endgroup]
+2024-12-03T23:13:16.8905086Z ##[group]Run wget -O - https://raw.githubusercontent.com/codacy/codacy-analysis-cli/4.0.0/bin/codacy-analysis-cli.sh > /home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh
+2024-12-03T23:13:16.8906873Z [36;1mwget -O - https://raw.githubusercontent.com/codacy/codacy-analysis-cli/4.0.0/bin/codacy-analysis-cli.sh > /home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh[0m
+2024-12-03T23:13:16.8964913Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2024-12-03T23:13:16.8965403Z env:
+2024-12-03T23:13:16.8965837Z   CODACY_ANALYSIS_CLI_VERSION: 4.0.0
+2024-12-03T23:13:16.8966621Z   CLI_SCRIPT_PATH: /home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh
+2024-12-03T23:13:16.8967336Z ##[endgroup]
+2024-12-03T23:13:16.9804413Z --2024-12-03 23:13:16--  https://raw.githubusercontent.com/codacy/codacy-analysis-cli/4.0.0/bin/codacy-analysis-cli.sh
+2024-12-03T23:13:16.9842458Z Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
+2024-12-03T23:13:16.9897399Z Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
+2024-12-03T23:13:17.0840078Z HTTP request sent, awaiting response... 200 OK
+2024-12-03T23:13:17.0841219Z Length: 3107 (3.0K) [text/plain]
+2024-12-03T23:13:17.0842338Z Saving to: ‘STDOUT’
+2024-12-03T23:13:17.0842715Z 
+2024-12-03T23:13:17.0843118Z      0K ...                                                   100% 36.5M=0s
+2024-12-03T23:13:17.0843600Z 
+2024-12-03T23:13:17.0844022Z 2024-12-03 23:13:17 (36.5 MB/s) - written to stdout [3107/3107]
+2024-12-03T23:13:17.0844693Z 
+2024-12-03T23:13:17.0987350Z ##[group]Run chmod +x /home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh
+2024-12-03T23:13:17.0988452Z [36;1mchmod +x /home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh[0m
+2024-12-03T23:13:17.1045955Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2024-12-03T23:13:17.1046321Z env:
+2024-12-03T23:13:17.1046533Z   CODACY_ANALYSIS_CLI_VERSION: 4.0.0
+2024-12-03T23:13:17.1047177Z   CLI_SCRIPT_PATH: /home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh
+2024-12-03T23:13:17.1047800Z ##[endgroup]
+2024-12-03T23:13:17.1161741Z ##[group]Run /home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh analyze $(if [ true = true ]; then echo "--verbose"; fi) $(if [  ]; then echo "--project-token "; fi) $(if [  ]; then echo "--codacy-api-base-url "; fi) $(if [ sarif ]; then echo "--format sarif"; fi) $(if [ results.sarif ]; then echo "--output results.sarif"; fi) $(if [  ]; then echo "--directory "; fi) $(if [  ]; then echo "--parallel "; fi) $(if [ 2147483647 ]; then echo "--max-allowed-issues 2147483647"; fi) $(if [  ]; then echo "--tool "; fi) $(if [  ]; then echo "--tool-timeout "; fi) $(if [  = true ]; then echo "--upload"; fi) $(if [  = true ]; then echo "--fail-if-incomplete"; fi) $(if [  = true ]; then echo "--allow-network"; fi) $(if [  = true ]; then echo "--force-file-permissions"; fi) $(if [ true = true ]; then echo "--gh-code-scanning-compat"; fi)
+2024-12-03T23:13:17.1166026Z [36;1m/home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh analyze $(if [ true = true ]; then echo "--verbose"; fi) $(if [  ]; then echo "--project-token "; fi) $(if [  ]; then echo "--codacy-api-base-url "; fi) $(if [ sarif ]; then echo "--format sarif"; fi) $(if [ results.sarif ]; then echo "--output results.sarif"; fi) $(if [  ]; then echo "--directory "; fi) $(if [  ]; then echo "--parallel "; fi) $(if [ 2147483647 ]; then echo "--max-allowed-issues 2147483647"; fi) $(if [  ]; then echo "--tool "; fi) $(if [  ]; then echo "--tool-timeout "; fi) $(if [  = true ]; then echo "--upload"; fi) $(if [  = true ]; then echo "--fail-if-incomplete"; fi) $(if [  = true ]; then echo "--allow-network"; fi) $(if [  = true ]; then echo "--force-file-permissions"; fi) $(if [ true = true ]; then echo "--gh-code-scanning-compat"; fi)[0m
+2024-12-03T23:13:17.1218385Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2024-12-03T23:13:17.1218743Z env:
+2024-12-03T23:13:17.1218953Z   CODACY_ANALYSIS_CLI_VERSION: 4.0.0
+2024-12-03T23:13:17.1219617Z   CLI_SCRIPT_PATH: /home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh
+2024-12-03T23:13:17.1220245Z ##[endgroup]
+2024-12-03T23:13:17.1348673Z /home/runner/work/_temp/f57b57a3-1435-46d7-8f58-464a0faf46a0.sh: line 1: [: =: unary operator expected
+2024-12-03T23:13:17.1353767Z /home/runner/work/_temp/f57b57a3-1435-46d7-8f58-464a0faf46a0.sh: line 1: [: =: unary operator expected
+2024-12-03T23:13:17.1358870Z /home/runner/work/_temp/f57b57a3-1435-46d7-8f58-464a0faf46a0.sh: line 1: [: =: unary operator expected
+2024-12-03T23:13:17.1364080Z /home/runner/work/_temp/f57b57a3-1435-46d7-8f58-464a0faf46a0.sh: line 1: [: =: unary operator expected
+2024-12-03T23:13:17.2525558Z Unable to find image 'codacy/codacy-analysis-cli:4.0.0' locally
+2024-12-03T23:13:17.4942883Z 4.0.0: Pulling from codacy/codacy-analysis-cli
+2024-12-03T23:13:17.4950310Z e7c96db7181b: Pulling fs layer
+2024-12-03T23:13:17.4951112Z f910a506b6cb: Pulling fs layer
+2024-12-03T23:13:17.4952269Z b6abafe80f63: Pulling fs layer
+2024-12-03T23:13:17.4952840Z 1811036e9141: Pulling fs layer
+2024-12-03T23:13:17.4953302Z 6314bc44cdf3: Pulling fs layer
+2024-12-03T23:13:17.4953767Z 8eac012f9da4: Pulling fs layer
+2024-12-03T23:13:17.4954180Z 8eac012f9da4: Waiting
+2024-12-03T23:13:17.4954557Z 1811036e9141: Waiting
+2024-12-03T23:13:17.4954923Z 6314bc44cdf3: Waiting
+2024-12-03T23:13:17.6025450Z f910a506b6cb: Download complete
+2024-12-03T23:13:17.6593217Z e7c96db7181b: Verifying Checksum
+2024-12-03T23:13:17.6594385Z e7c96db7181b: Download complete
+2024-12-03T23:13:17.7550832Z 6314bc44cdf3: Verifying Checksum
+2024-12-03T23:13:17.7552225Z 6314bc44cdf3: Download complete
+2024-12-03T23:13:17.8028179Z e7c96db7181b: Pull complete
+2024-12-03T23:13:17.9726201Z f910a506b6cb: Pull complete
+2024-12-03T23:13:18.0077552Z b6abafe80f63: Verifying Checksum
+2024-12-03T23:13:18.0078855Z b6abafe80f63: Download complete
+2024-12-03T23:13:18.1812323Z 8eac012f9da4: Verifying Checksum
+2024-12-03T23:13:18.1813405Z 8eac012f9da4: Download complete
+2024-12-03T23:13:18.5917477Z 1811036e9141: Verifying Checksum
+2024-12-03T23:13:18.5918678Z 1811036e9141: Download complete
+2024-12-03T23:13:18.9045815Z b6abafe80f63: Pull complete
+2024-12-03T23:13:20.9600233Z 1811036e9141: Pull complete
+2024-12-03T23:13:20.9748270Z 6314bc44cdf3: Pull complete
+2024-12-03T23:13:21.2674493Z 8eac012f9da4: Pull complete
+2024-12-03T23:13:21.2713712Z Digest: sha256:4e563da124426918287e6ca75e80396264f4304b4a971c601099029bf89f9bcb
+2024-12-03T23:13:21.2733485Z Status: Downloaded newer image for codacy/codacy-analysis-cli:4.0.0
+2024-12-03T23:13:23.5341369Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, create new FileSnapshot: lastRead=2024-12-03 23:13:23.526000000, lastModified=2024-12-03 23:13:16.000000000, size=422, fileKey=(dev=811,ino=524938) 
+2024-12-03T23:13:23.5347124Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.5351179Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5353127Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.5356771Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, create new FileSnapshot: lastRead=2024-12-03 23:13:23.535000000, lastModified=2024-12-03 23:13:16.000000000, size=422, fileKey=(dev=811,ino=524938) 
+2024-12-03T23:13:23.5363615Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.5368802Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5372427Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.5378185Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.535000000, lastModified=2024-12-03 23:13:16.000000000, delta=7535000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5380629Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.5386496Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/index, create new FileSnapshot: lastRead=2024-12-03 23:13:23.537000000, lastModified=2024-12-03 23:13:16.000000000, size=2851, fileKey=(dev=811,ino=524937) 
+2024-12-03T23:13:23.5389892Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, create new FileSnapshot: lastRead=2024-12-03 23:13:23.537000000, lastModified=2024-12-03 23:13:16.000000000, size=422, fileKey=(dev=811,ino=524938) 
+2024-12-03T23:13:23.5397265Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.5400434Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5402335Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.5404813Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, create new FileSnapshot: lastRead=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, size=422, fileKey=(dev=811,ino=524938) 
+2024-12-03T23:13:23.5413044Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.5421674Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5425345Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.5430438Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5432896Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.5435574Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/index, create new FileSnapshot: lastRead=2024-12-03 23:13:23.542000000, lastModified=2024-12-03 23:13:16.000000000, size=2851, fileKey=(dev=811,ino=524937) 
+2024-12-03T23:13:23.5514015Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.5519029Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5521516Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.5527215Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5530331Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.5564153Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.5569739Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5572325Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.5576692Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5579826Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.5659480Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.5663760Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5666490Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.5671906Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5676426Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.5682279Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/HEAD, create new FileSnapshot: lastRead=2024-12-03 23:13:23.567000000, lastModified=2024-12-03 23:13:16.000000000, size=21, fileKey=(dev=811,ino=524976) 
+2024-12-03T23:13:23.5688199Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/refs/heads/main, create new FileSnapshot: lastRead=2024-12-03 23:13:23.568000000, lastModified=2024-12-03 23:13:16.000000000, size=41, fileKey=(dev=811,ino=524973) 
+2024-12-03T23:13:23.5692452Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.5697246Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5699932Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.5704661Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5708883Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.5713472Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/HEAD, isRacyClean=false, read=2024-12-03 23:13:23.567000000, lastModified=2024-12-03 23:13:16.000000000, delta=7567000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.5716890Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/HEAD, is unmodified 
+2024-12-03T23:13:23.5721653Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/refs/heads/main, isRacyClean=false, read=2024-12-03 23:13:23.568000000, lastModified=2024-12-03 23:13:16.000000000, delta=7568000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.5725989Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/refs/heads/main, is unmodified 
+2024-12-03T23:13:23.5757137Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:581[0;39m - file=null, size changed from -1 to 4096 bytes 
+2024-12-03T23:13:23.5761638Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, create new FileSnapshot: lastRead=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, size=4096, fileKey=(dev=811,ino=524744) 
+2024-12-03T23:13:23.5765230Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, delta=7573000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.5767884Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.5769431Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:581[0;39m - file=null, size changed from -1 to 41 bytes 
+2024-12-03T23:13:23.5772043Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/shallow, create new FileSnapshot: lastRead=2024-12-03 23:13:23.575000000, lastModified=2024-12-03 23:13:16.000000000, size=41, fileKey=(dev=811,ino=524747) 
+2024-12-03T23:13:23.5775244Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, delta=7573000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.5777651Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.5808086Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/index, create new FileSnapshot: lastRead=2024-12-03 23:13:23.579000000, lastModified=2024-12-03 23:13:16.000000000, size=2851, fileKey=(dev=811,ino=524937) 
+2024-12-03T23:13:23.5842577Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/index, create new FileSnapshot: lastRead=2024-12-03 23:13:23.583000000, lastModified=2024-12-03 23:13:16.000000000, size=2851, fileKey=(dev=811,ino=524937) 
+2024-12-03T23:13:23.5873532Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.5879489Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5881470Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.5885768Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5888699Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.5908402Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, delta=7573000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.5910873Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.5936839Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.5941751Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5945219Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.5950405Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.5955950Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.5975180Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, delta=7573000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.5977140Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.5985917Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, delta=7573000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.5988811Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6060812Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6076935Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6078825Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6080865Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6082910Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.6143982Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, delta=7573000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6153867Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6157115Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, delta=7573000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6159577Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6170681Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, delta=7573000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6176440Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6219405Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, delta=7573000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6222278Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6372431Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, delta=7573000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6374979Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6391078Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.573000000, lastModified=2024-12-03 23:13:16.000000000, delta=7573000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6392758Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6445335Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6449553Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6452071Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6455736Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6459285Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.6461542Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6463550Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6465563Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6466981Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6468486Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.6556913Z 12/03 23:13:23 [31mWARN [0;39m [36mc.c.a.c.command.AnalyseCommand:105[0;39m - There are uncommitted changes in the project.
+2024-12-03T23:13:23.6557770Z Please commit them before running your analysis:
+2024-12-03T23:13:23.6558212Z Uncommited files:
+2024-12-03T23:13:23.6558509Z results.sarif 
+2024-12-03T23:13:23.6564546Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6572416Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6577199Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6582188Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6588627Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.6594457Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/HEAD, isRacyClean=false, read=2024-12-03 23:13:23.567000000, lastModified=2024-12-03 23:13:16.000000000, delta=7567000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6602446Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/HEAD, is unmodified 
+2024-12-03T23:13:23.6607737Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/refs/heads/main, isRacyClean=false, read=2024-12-03 23:13:23.568000000, lastModified=2024-12-03 23:13:16.000000000, delta=7568000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6610235Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/refs/heads/main, is unmodified 
+2024-12-03T23:13:23.6611870Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6613851Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6615617Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6617916Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.539000000, lastModified=2024-12-03 23:13:16.000000000, delta=7539000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6620691Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.6623257Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/HEAD, isRacyClean=false, read=2024-12-03 23:13:23.567000000, lastModified=2024-12-03 23:13:16.000000000, delta=7567000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6625564Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/HEAD, is unmodified 
+2024-12-03T23:13:23.6628128Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/refs/heads/main, isRacyClean=false, read=2024-12-03 23:13:23.568000000, lastModified=2024-12-03 23:13:16.000000000, delta=7568000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6630813Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/refs/heads/main, is unmodified 
+2024-12-03T23:13:23.6645459Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/shallow, isRacyClean=false, read=2024-12-03 23:13:23.575000000, lastModified=2024-12-03 23:13:16.000000000, delta=7575000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6647986Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/shallow, is unmodified 
+2024-12-03T23:13:23.6650662Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, create new FileSnapshot: lastRead=2024-12-03 23:13:23.662000000, lastModified=2024-12-03 23:13:16.000000000, size=422, fileKey=(dev=811,ino=524938) 
+2024-12-03T23:13:23.6685360Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6688016Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6690206Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6692979Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, create new FileSnapshot: lastRead=2024-12-03 23:13:23.664000000, lastModified=2024-12-03 23:13:16.000000000, size=422, fileKey=(dev=811,ino=524938) 
+2024-12-03T23:13:23.6695666Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6697928Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6700026Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6702860Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.664000000, lastModified=2024-12-03 23:13:16.000000000, delta=7664000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6705648Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.6709116Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/index, create new FileSnapshot: lastRead=2024-12-03 23:13:23.667000000, lastModified=2024-12-03 23:13:16.000000000, size=2851, fileKey=(dev=811,ino=524937) 
+2024-12-03T23:13:23.6712807Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, create new FileSnapshot: lastRead=2024-12-03 23:13:23.667000000, lastModified=2024-12-03 23:13:16.000000000, size=422, fileKey=(dev=811,ino=524938) 
+2024-12-03T23:13:23.6715085Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6717388Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6719193Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6722073Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, create new FileSnapshot: lastRead=2024-12-03 23:13:23.669000000, lastModified=2024-12-03 23:13:16.000000000, size=422, fileKey=(dev=811,ino=524938) 
+2024-12-03T23:13:23.6724630Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6727261Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6729435Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6732293Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.669000000, lastModified=2024-12-03 23:13:16.000000000, delta=7669000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6734730Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.6737788Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/index, create new FileSnapshot: lastRead=2024-12-03 23:13:23.670000000, lastModified=2024-12-03 23:13:16.000000000, size=2851, fileKey=(dev=811,ino=524937) 
+2024-12-03T23:13:23.6760231Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6763437Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6766389Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6769741Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.669000000, lastModified=2024-12-03 23:13:16.000000000, delta=7669000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6772812Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.6776768Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/HEAD, create new FileSnapshot: lastRead=2024-12-03 23:13:23.673000000, lastModified=2024-12-03 23:13:16.000000000, size=21, fileKey=(dev=811,ino=524976) 
+2024-12-03T23:13:23.6781068Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/refs/heads/main, create new FileSnapshot: lastRead=2024-12-03 23:13:23.673000000, lastModified=2024-12-03 23:13:16.000000000, size=41, fileKey=(dev=811,ino=524973) 
+2024-12-03T23:13:23.6782854Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6785826Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6787799Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6790872Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.669000000, lastModified=2024-12-03 23:13:16.000000000, delta=7669000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6792927Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.6794435Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/HEAD, isRacyClean=false, read=2024-12-03 23:13:23.673000000, lastModified=2024-12-03 23:13:16.000000000, delta=7673000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6796084Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/HEAD, is unmodified 
+2024-12-03T23:13:23.6797552Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/refs/heads/main, isRacyClean=false, read=2024-12-03 23:13:23.673000000, lastModified=2024-12-03 23:13:16.000000000, delta=7673000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6799108Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/refs/heads/main, is unmodified 
+2024-12-03T23:13:23.6799991Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:581[0;39m - file=null, size changed from -1 to 4096 bytes 
+2024-12-03T23:13:23.6802729Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, create new FileSnapshot: lastRead=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, size=4096, fileKey=(dev=811,ino=524744) 
+2024-12-03T23:13:23.6806623Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, delta=7676000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6809852Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6812111Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:581[0;39m - file=null, size changed from -1 to 41 bytes 
+2024-12-03T23:13:23.6815219Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:272[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/shallow, create new FileSnapshot: lastRead=2024-12-03 23:13:23.678000000, lastModified=2024-12-03 23:13:16.000000000, size=41, fileKey=(dev=811,ino=524747) 
+2024-12-03T23:13:23.6818159Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:550[0;39m - file=/root/.config/jgit/config.lock, cannot be racily clean 
+2024-12-03T23:13:23.6821198Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/root/.gitconfig, isRacyClean=false, read=2024-12-03 23:13:22.910000000, lastModified=1970-01-01 00:00:00.000000000, delta=1733267602910000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6823473Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/root/.gitconfig, is unmodified 
+2024-12-03T23:13:23.6826240Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, isRacyClean=false, read=2024-12-03 23:13:23.669000000, lastModified=2024-12-03 23:13:16.000000000, delta=7669000000 ns, racy<=2500000000 ns 
+2024-12-03T23:13:23.6828429Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/config, is unmodified 
+2024-12-03T23:13:23.6831111Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/shallow, isRacyClean=false, read=2024-12-03 23:13:23.678000000, lastModified=2024-12-03 23:13:16.000000000, delta=7678000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6833465Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/shallow, is unmodified 
+2024-12-03T23:13:23.6836071Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, delta=7676000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6839223Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6842049Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, delta=7676000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6843888Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6846428Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, delta=7676000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6849155Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6851854Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, delta=7676000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6854785Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6857607Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, delta=7676000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6859878Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6862983Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, delta=7676000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6865560Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6868559Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, delta=7676000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6871010Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6872532Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, delta=7676000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6875538Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6878485Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, delta=7676000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6880816Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:23.6885263Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:513[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, isRacyClean=false, read=2024-12-03 23:13:23.676000000, lastModified=2024-12-03 23:13:16.000000000, delta=7676000000 ns, racy<=1251250000 ns 
+2024-12-03T23:13:23.6887693Z 12/03 23:13:23 [39mDEBUG[0;39m [36mo.e.j.i.s.file.FileSnapshot:557[0;39m - file=/home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA/.git/objects/pack, is unmodified 
+2024-12-03T23:13:24.2673147Z 12/03 23:13:24 [34mINFO [0;39m [36mc.c.a.c.t.DuplicationToolCollector:81[0;39m - No duplication tools found for language Shell 
+2024-12-03T23:13:24.2679805Z 12/03 23:13:24 [34mINFO [0;39m [36mc.c.a.c.t.DuplicationToolCollector:81[0;39m - No duplication tools found for language Markdown 
+2024-12-03T23:13:24.2689058Z 12/03 23:13:24 [34mINFO [0;39m [36mc.c.a.c.t.DuplicationToolCollector:81[0;39m - No duplication tools found for language YAML 
+2024-12-03T23:13:24.4262030Z 12/03 23:13:24 [39mDEBUG[0;39m [36mCodacyPlugins:17[0;39m - codacy/codacy-metrics-cloc:0.2.4 doesn't exist locally. 
+2024-12-03T23:13:24.4266759Z 12/03 23:13:24 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-metrics-cloc:0.2.4 exists locally. took 57ms 
+2024-12-03T23:13:27.9658984Z 12/03 23:13:27 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Pulling docker image codacy/codacy-metrics-cloc:0.2.4. took 3538ms 
+2024-12-03T23:13:29.1381064Z 12/03 23:13:29 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-metrics-cloc:0.2.4. took 1170ms 
+2024-12-03T23:13:29.1445361Z 12/03 23:13:29 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:48[0;39m - Completed metrics for metrics with 1 results 
+2024-12-03T23:13:29.1810041Z 12/03 23:13:29 [39mDEBUG[0;39m [36mCodacyPlugins:17[0;39m - codacy/codacy-duplication-pmdcpd:2.0.145 doesn't exist locally. 
+2024-12-03T23:13:29.1811672Z 12/03 23:13:29 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-duplication-pmdcpd:2.0.145 exists locally. took 30ms 
+2024-12-03T23:13:30.9797085Z 12/03 23:13:30 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Pulling docker image codacy/codacy-duplication-pmdcpd:2.0.145. took 1797ms 
+2024-12-03T23:13:32.2720908Z 12/03 23:13:32 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-duplication-pmdcpd:2.0.145. took 1294ms 
+2024-12-03T23:13:32.2869738Z 12/03 23:13:32 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:66[0;39m - Completed duplication for duplication with 21 results 
+2024-12-03T23:13:32.2928040Z 12/03 23:13:32 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:192[0;39m - Could not find local extra configuration for prospector 
+2024-12-03T23:13:32.2943061Z 12/03 23:13:32 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:181[0;39m - Preparing to run prospector with defaults 
+2024-12-03T23:13:32.2967470Z 12/03 23:13:32 [34mINFO [0;39m [36mc.c.analysis.core.tools.Tool:101[0;39m - Using the root directory /home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA to run 
+2024-12-03T23:13:32.3627091Z 12/03 23:13:32 [39mDEBUG[0;39m [36mCodacyPlugins:17[0;39m - codacy/codacy-prospector:2.2.0 doesn't exist locally. 
+2024-12-03T23:13:32.3628567Z 12/03 23:13:32 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-prospector:2.2.0 exists locally. took 33ms 
+2024-12-03T23:13:38.6322285Z 12/03 23:13:38 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Pulling docker image codacy/codacy-prospector:2.2.0. took 6269ms 
+2024-12-03T23:13:48.3698443Z 12/03 23:13:48 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-prospector:2.2.0. took 9737ms 
+2024-12-03T23:13:48.5106733Z 12/03 23:13:48 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:28[0;39m - Completed analysis for prospector with 295 results 
+2024-12-03T23:13:48.5631993Z 12/03 23:13:48 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-metrics-cloc:0.2.4 exists locally. took 39ms 
+2024-12-03T23:13:49.7563761Z 12/03 23:13:49 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-metrics-cloc:0.2.4. took 1192ms 
+2024-12-03T23:13:49.7581800Z 12/03 23:13:49 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:48[0;39m - Completed metrics for metrics with 12 results 
+2024-12-03T23:13:49.7903733Z 12/03 23:13:49 [39mDEBUG[0;39m [36mCodacyPlugins:17[0;39m - codacy/codacy-metrics-radon:0.1.66 doesn't exist locally. 
+2024-12-03T23:13:49.7905046Z 12/03 23:13:49 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-metrics-radon:0.1.66 exists locally. took 29ms 
+2024-12-03T23:13:52.1176056Z 12/03 23:13:52 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Pulling docker image codacy/codacy-metrics-radon:0.1.66. took 2326ms 
+2024-12-03T23:13:53.3772118Z 12/03 23:13:53 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-metrics-radon:0.1.66. took 1259ms 
+2024-12-03T23:13:53.3808282Z 12/03 23:13:53 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:48[0;39m - Completed metrics for metrics with 10 results 
+2024-12-03T23:13:53.3814435Z 12/03 23:13:53 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:192[0;39m - Could not find local extra configuration for pylint 
+2024-12-03T23:13:53.3833910Z 12/03 23:13:53 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:181[0;39m - Preparing to run pylint with defaults 
+2024-12-03T23:13:53.3836520Z 12/03 23:13:53 [34mINFO [0;39m [36mc.c.analysis.core.tools.Tool:101[0;39m - Using the root directory /home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA to run 
+2024-12-03T23:13:53.4195730Z 12/03 23:13:53 [39mDEBUG[0;39m [36mCodacyPlugins:17[0;39m - codacy/codacy-pylint:3.2.0 doesn't exist locally. 
+2024-12-03T23:13:53.4197213Z 12/03 23:13:53 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-pylint:3.2.0 exists locally. took 32ms 
+2024-12-03T23:14:01.6852725Z 12/03 23:14:01 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Pulling docker image codacy/codacy-pylint:3.2.0. took 8265ms 
+2024-12-03T23:14:07.9681293Z 12/03 23:14:07 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-pylint:3.2.0. took 6283ms 
+2024-12-03T23:14:08.2172704Z 12/03 23:14:08 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:28[0;39m - Completed analysis for pylint with 3742 results 
+2024-12-03T23:14:08.3072150Z 12/03 23:14:08 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-metrics-cloc:0.2.4 exists locally. took 33ms 
+2024-12-03T23:14:09.5063356Z 12/03 23:14:09 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-metrics-cloc:0.2.4. took 1199ms 
+2024-12-03T23:14:09.5069166Z 12/03 23:14:09 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:48[0;39m - Completed metrics for metrics with 1 results 
+2024-12-03T23:14:09.5076742Z 12/03 23:14:09 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:192[0;39m - Could not find local extra configuration for bandit 
+2024-12-03T23:14:09.5080584Z 12/03 23:14:09 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:181[0;39m - Preparing to run bandit with defaults 
+2024-12-03T23:14:09.5082123Z 12/03 23:14:09 [34mINFO [0;39m [36mc.c.analysis.core.tools.Tool:101[0;39m - Using the root directory /home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA to run 
+2024-12-03T23:14:09.5400244Z 12/03 23:14:09 [39mDEBUG[0;39m [36mCodacyPlugins:17[0;39m - codacy/codacy-bandit:2.2.1 doesn't exist locally. 
+2024-12-03T23:14:09.5401732Z 12/03 23:14:09 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-bandit:2.2.1 exists locally. took 30ms 
+2024-12-03T23:14:14.8731868Z 12/03 23:14:14 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Pulling docker image codacy/codacy-bandit:2.2.1. took 5333ms 
+2024-12-03T23:14:26.7201742Z 12/03 23:14:26 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-bandit:2.2.1. took 11847ms 
+2024-12-03T23:14:26.7214796Z 12/03 23:14:26 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:28[0;39m - Completed analysis for bandit with 19 results 
+2024-12-03T23:14:26.7736416Z 12/03 23:14:26 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-metrics-cloc:0.2.4 exists locally. took 31ms 
+2024-12-03T23:14:27.9445145Z 12/03 23:14:27 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-metrics-cloc:0.2.4. took 1170ms 
+2024-12-03T23:14:27.9453448Z 12/03 23:14:27 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:48[0;39m - Completed metrics for metrics with 8 results 
+2024-12-03T23:14:27.9460100Z 12/03 23:14:27 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:192[0;39m - Could not find local extra configuration for shellcheck 
+2024-12-03T23:14:27.9462446Z 12/03 23:14:27 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:181[0;39m - Preparing to run shellcheck with defaults 
+2024-12-03T23:14:27.9480848Z 12/03 23:14:27 [34mINFO [0;39m [36mc.c.analysis.core.tools.Tool:101[0;39m - Using the root directory /home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA to run 
+2024-12-03T23:14:27.9788008Z 12/03 23:14:27 [39mDEBUG[0;39m [36mCodacyPlugins:17[0;39m - codacy/codacy-shellcheck:2.4.0 doesn't exist locally. 
+2024-12-03T23:14:27.9789404Z 12/03 23:14:27 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-shellcheck:2.4.0 exists locally. took 30ms 
+2024-12-03T23:14:28.8980232Z 12/03 23:14:28 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Pulling docker image codacy/codacy-shellcheck:2.4.0. took 919ms 
+2024-12-03T23:14:29.1057372Z 12/03 23:14:29 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-shellcheck:2.4.0. took 207ms 
+2024-12-03T23:14:29.1067449Z 12/03 23:14:29 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:28[0;39m - Completed analysis for shellcheck with 7 results 
+2024-12-03T23:14:29.1590356Z 12/03 23:14:29 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:192[0;39m - Could not find local extra configuration for pylintpython3 
+2024-12-03T23:14:29.1592801Z 12/03 23:14:29 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:181[0;39m - Preparing to run pylintpython3 with defaults 
+2024-12-03T23:14:29.1594686Z 12/03 23:14:29 [34mINFO [0;39m [36mc.c.analysis.core.tools.Tool:101[0;39m - Using the root directory /home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA to run 
+2024-12-03T23:14:29.1935397Z 12/03 23:14:29 [39mDEBUG[0;39m [36mCodacyPlugins:17[0;39m - codacy/codacy-pylint-python3:2.2.2 doesn't exist locally. 
+2024-12-03T23:14:29.1940610Z 12/03 23:14:29 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-pylint-python3:2.2.2 exists locally. took 33ms 
+2024-12-03T23:14:32.9850878Z 12/03 23:14:32 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Pulling docker image codacy/codacy-pylint-python3:2.2.2. took 3791ms 
+2024-12-03T23:14:38.9675762Z 12/03 23:14:38 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-pylint-python3:2.2.2. took 5982ms 
+2024-12-03T23:14:39.0858875Z 12/03 23:14:39 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:28[0;39m - Completed analysis for pylintpython3 with 2370 results 
+2024-12-03T23:14:39.1210929Z 12/03 23:14:39 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:192[0;39m - Could not find local extra configuration for remark-lint 
+2024-12-03T23:14:39.1217444Z 12/03 23:14:39 [34mINFO [0;39m [36mc.c.a.c.a.AnalyseExecutor:181[0;39m - Preparing to run remark-lint with defaults 
+2024-12-03T23:14:39.1219048Z 12/03 23:14:39 [34mINFO [0;39m [36mc.c.analysis.core.tools.Tool:101[0;39m - Using the root directory /home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA to run 
+2024-12-03T23:14:39.1653200Z 12/03 23:14:39 [39mDEBUG[0;39m [36mCodacyPlugins:17[0;39m - codacy/codacy-remark-lint:2.5.8 doesn't exist locally. 
+2024-12-03T23:14:39.1658555Z 12/03 23:14:39 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Verifying if docker image codacy/codacy-remark-lint:2.5.8 exists locally. took 43ms 
+2024-12-03T23:14:43.5146369Z 12/03 23:14:43 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Pulling docker image codacy/codacy-remark-lint:2.5.8. took 4348ms 
+2024-12-03T23:14:44.1565429Z 12/03 23:14:44 [34mINFO [0;39m [36mCodacyPlugins:26[0;39m - Running docker image codacy/codacy-remark-lint:2.5.8. took 641ms 
+2024-12-03T23:14:44.1612021Z 12/03 23:14:44 [34mINFO [0;39m [36mc.c.a.c.a.CodacyPluginsAnalyser:28[0;39m - Completed analysis for remark-lint with 258 results 
+2024-12-03T23:14:45.5017986Z ##[group]Run github/codeql-action/upload-sarif@v3
+2024-12-03T23:14:45.5018295Z with:
+2024-12-03T23:14:45.5018464Z   sarif_file: results.sarif
+2024-12-03T23:14:45.5018774Z   checkout_path: /home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA
+2024-12-03T23:14:45.5019228Z   token: ***
+2024-12-03T23:14:45.5019390Z   matrix: null
+2024-12-03T23:14:45.5019568Z   wait-for-processing: true
+2024-12-03T23:14:45.5019764Z env:
+2024-12-03T23:14:45.5019924Z   CODACY_ANALYSIS_CLI_VERSION: 4.0.0
+2024-12-03T23:14:45.5020515Z   CLI_SCRIPT_PATH: /home/runner/work/_actions/codacy/codacy-analysis-cli-action/d840f886c4bd4edc059706d09c6a1586111c540b/codacy-analysis-cli.sh
+2024-12-03T23:14:45.5021080Z ##[endgroup]
+2024-12-03T23:14:46.1736371Z ##[group]Uploading results
+2024-12-03T23:14:46.1736889Z Processing sarif files: ["results.sarif"]
+2024-12-03T23:14:46.1739251Z Validating results.sarif
+2024-12-03T23:14:50.0032882Z Combining SARIF files using the CodeQL CLI
+2024-12-03T23:14:50.0238935Z Adding fingerprints to SARIF file. See https://docs.github.com/en/enterprise-cloud@latest/code-security/code-scanning/integrating-with-code-scanning/sarif-support-for-code-scanning#providing-data-to-track-code-scanning-alerts-across-runs for more information.
+2024-12-03T23:14:50.1845932Z Uploading results
+2024-12-03T23:14:50.5175959Z Successfully uploaded results
+2024-12-03T23:14:50.5177031Z ##[endgroup]
+2024-12-03T23:14:50.5196476Z ##[group]Waiting for processing to finish
+2024-12-03T23:14:50.6411016Z Analysis upload status is pending.
+2024-12-03T23:14:55.7597412Z Analysis upload status is complete.
+2024-12-03T23:14:55.7598191Z ##[endgroup]
+2024-12-03T23:14:55.8766818Z Post job cleanup.
+2024-12-03T23:14:56.2016069Z ##[group]Uploading combined SARIF debug artifact
+2024-12-03T23:14:56.2018579Z ##[endgroup]
+2024-12-03T23:14:56.2221379Z Post job cleanup.
+2024-12-03T23:14:56.3190643Z [command]/usr/bin/git version
+2024-12-03T23:14:56.3227208Z git version 2.47.0
+2024-12-03T23:14:56.3270541Z Temporarily overriding HOME='/home/runner/work/_temp/84ee5b03-46d6-4554-aec5-da130674b32b' before making global git config changes
+2024-12-03T23:14:56.3272120Z Adding repository directory to the temporary git global config as a safe directory
+2024-12-03T23:14:56.3283887Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DKNT-FALL2024-SQA/DKNT-FALL2024-SQA
+2024-12-03T23:14:56.3319079Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-12-03T23:14:56.3353872Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-12-03T23:14:56.3597098Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-12-03T23:14:56.3619091Z http.https://github.com/.extraheader
+2024-12-03T23:14:56.3631777Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2024-12-03T23:14:56.3664477Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-12-03T23:14:56.4007149Z Cleaning up orphan processes
