@@ -7,5 +7,6 @@
 - The first thing I learned is that the use cases of Codacy can be adapted to other CI workflows. Even without GitHub Actions, similar results can be achieved by creating a custom YAML file and implementing CI through third-party tools like Jenkins. The second thing I learned is to make sure the branch name in the YAML file matches the repo branches that you want to monitor. If not, it will not work. I made the mistake of having the branch name as "master", but the branch name was "main" so it did not work at first. The third thing I learned is that through CI, issues can be found and reported. You can assign issues to other users who are in the repository, make the needed changes, and resolve the issue. It's similar to Jira, and during my internship, the company utilized GitLab and had it integrated with Jira. Any issues that were caught through CI could be sent to Jira, users were assigned to the issue, and it could be resolved through GitLab. 
 # Noah Jones - (activity)
 - [lesson learned]
-# Traevon Wright (activity)
-- [lesson learned]
+# Traevon Wright Fuzzing & Forensics
+- With the Fuzzing, I ran different inputs with 5 different python methods and logged the results. I learned about the importance of good input handling and an effective way of testing the system resillience.
+- I integrated forensics into my code by establishing logging for the inputs, key events, and outputs of the program. I learned about how forensics can be used to trace the flow of a program and how it can be an effective way of ensuring the integrity of the program and its data. 
