@@ -8,23 +8,23 @@ import csv
 import json
 
 def check_bandit_installation():
-    """Make sure we have our security scanner ready"""
+    """checks if bandit is installed"""
     try:
         subprocess.run(['bandit', '--version'], capture_output=True)
     except FileNotFoundError:
-        print("Installing security scanner (bandit)...")
+        print("installing bandit...")
         subprocess.run([sys.executable, '-m', 'pip', 'install', 'bandit'])
-        print("Security scanner installed successfully!")
+        print("done")
 
 def get_all_python_files():
-    """Find all Python files in our project to scan"""
+    """gets python files from the project"""
     python_files = []
-    # Get the root directory of the Git repository
+    # get root dir
     git_root = subprocess.run(['git', 'rev-parse', '--show-toplevel'], 
                             capture_output=True, text=True).stdout.strip()
     
     for root, _, files in os.walk(git_root):
-        # Skip version control directories
+        # skip git folders
         if '.git' in root or '.svn' in root or '.hg' in root:
             continue
             
@@ -38,37 +38,37 @@ def get_all_python_files():
     return python_files
 
 def run_security_scan(files):
-    """Run the actual security scan on our Python files"""
+    """runs the scan"""
     if not files:
         return None
     
     try:
-        # Run bandit with detailed output
+        # run bandit
         cmd = ['bandit', '-f', 'json', '-ll', '-i', '-r'] + files
         result = subprocess.run(cmd, capture_output=True, text=True)
         
         if result.stdout:
             return result.stdout
         if result.stderr:
-            print(f"Warning during scan: {result.stderr}")
+            print(f"warning: {result.stderr}")
         return None
     except subprocess.CalledProcessError as e:
-        print(f"Scan failed: {e}")
+        print(f"failed: {e}")
         return None
 
 def save_results_to_csv(scan_results, output_file='security_results/scan_results.csv'):
-    """Save what we found to a CSV file"""
+    """saves results to csv"""
     if not scan_results:
         return
     
     try:
         results = json.loads(scan_results)
         
-        # Make sure we have somewhere to save our results
+        # make output folder
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
         
-        # Open/create our report file
         with open(output_file, 'w', newline='') as csvfile:
+            # csv columns
             fieldnames = [
                 'timestamp',
                 'filename',
@@ -84,7 +84,7 @@ def save_results_to_csv(scan_results, output_file='security_results/scan_results
             
             timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             
-            # Write each security issue we found
+            # write the issues
             for result in results.get('results', []):
                 writer.writerow({
                     'timestamp': timestamp,
@@ -97,35 +97,33 @@ def save_results_to_csv(scan_results, output_file='security_results/scan_results
                     'issue_description': result['issue_text']
                 })
             
-            print(f"\nSecurity scans complete! Check {output_file} for results")
+            print(f"\nresults saved to {output_file}")
             
     except json.JSONDecodeError:
-        print("Error: Couldn't understand scan results")
+        print("error parsing results")
     except KeyError as e:
-        print(f"Error: Missing information in results: {e}")
+        print(f"missing field: {e}")
 
 def main():
-    """Main function that runs our security scan"""
-    print("\nStarting security scan...")
+    """main function"""
+    print("\nstarting scan...")
     
-    # First, make sure we have our security scanner
+    # check for bandit
     check_bandit_installation()
     
-    # Find all Python files in the project
-    print("Looking for Python files...")
+    # get files
+    print("looking for python files...")
     python_files = get_all_python_files()
     
     if not python_files:
-        print("No Python files found to scan.")
+        print("no python files found")
         sys.exit(0)
     
-    print(f"\nFound {len(python_files)} Python files to scan")
+    print(f"\nfound {len(python_files)} files")
     
-    # Run the security scan
-    print("Running security scan...")
+    # scan and save
+    print("running scan...")
     scan_results = run_security_scan(python_files)
-    
-    # Save what we found
     save_results_to_csv(scan_results)
     
     sys.exit(0)
